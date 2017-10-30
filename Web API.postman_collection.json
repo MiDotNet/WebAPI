@@ -1,0 +1,174 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Web API",
+		"_postman_id": "0869dfa4-ea66-bda6-4c39-abfc016abe1f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Complex Get",
+			"request": {
+				"url": "http://localhost:3266/api/Complex",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Complex Get"
+			},
+			"response": []
+		},
+		{
+			"name": "Complex Post",
+			"request": {
+				"url": "http://localhost:3266/api/Complex",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":1,\n\t\"Name\": \"Test\",\n\t\"MoreInfo\": [\"Testing\", \"123\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Complex Put",
+			"request": {
+				"url": "http://localhost:3266/api/Complex/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Id\":1,\n\t\"Name\": \"Updated Test\",\n\t\"MoreInfo\": [\"Testing\", \"456\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Complex Delete",
+			"request": {
+				"url": "http://localhost:3266/api/Complex/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Complex Get Xml",
+			"request": {
+				"url": "http://localhost:3266/api/Complex/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Xml Get"
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Get",
+			"request": {
+				"url": "http://localhost:5251/api/Routing/GetNumbers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Post",
+			"request": {
+				"url": "http://localhost:5251/api/Routing/UpdateCount",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "=15"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Update and Get",
+			"request": {
+				"url": "http://localhost:5251/api/Routing/UpdateAndGetNumbers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Update and Post",
+			"request": {
+				"url": "http://localhost:5251/api/Routing/UpdateAndGetNumbers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "=5"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Get Ten",
+			"request": {
+				"url": "http://localhost:5251/api/Routing/GetTen",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Routing Get Letters",
+			"request": {
+				"url": "http://localhost:5251/api/Letters/ABC/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

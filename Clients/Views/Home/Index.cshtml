@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Clients.Models.SomeDTO>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        fetch('/api/complex').then(function (response) {
+            return response.json();
+        }).then(function (result) {
+                result.forEach(function (item) {
+                    document.getElementById('js').insertAdjacentText('beforeend', item.Name + " ");
+                });
+        });
+
+        $.get("/api/complex", function (data) {
+            $("#jquery").text(data.reduce((total,item) => total +  " " + item.Name, ""));
+        });
+    </script>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <br/>
+    <div>
+        From Javascript:
+        <div id="js">
+        </div>
+    </div>
+    <div>
+        From JQuery:
+        <div id="jquery">
+        </div>
+    </div>
+</body>
+</html>
